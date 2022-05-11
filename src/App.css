@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +7,6 @@
 html {
   min-height: 100%;
 }
-
 body {
   margin: 20px;
   color: #435757;
@@ -63,11 +61,11 @@ body {
   outline: none;
   counter-increment: undone-items;
 }
-.form-check-input[type='checkbox'] {
-  border-radius: 50%;
-}
 .btn-checked {
   background-color: rgba(255, 255, 255, 0.2);
+}
+.form-check-input[type='checkbox'] {
+  border-radius: 50%;
 }
 .form-check-input:checked {
   background-color: linear-gradient(-20deg, #000dff 80%, rgb(0, 255, 17) 20%);
@@ -79,7 +77,6 @@ body {
   padding: 10px 0;
   font-size: 1.2em;
 }
-
 .tasks::before {
   content: '';
   display: block;
@@ -90,7 +87,6 @@ body {
   width: 5px;
   background-color: #435757;
 }
-
 .tasks::after {
   display: block;
   float: right;
