@@ -1,38 +1,98 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 20px;
+  color: #435757;
+  background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
+  font: 500 1.2em/1.2 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.headerStyle {
+  color: #333;
+  background: #fff;
   text-align: center;
+  padding: 10px;
+}
+.title-list {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-size: 1.8em;
+}
+.container {
+  max-width: 450px;
+  margin: 75px auto 0;
+  border-top: 5px solid #435757;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+.btn-add {
+  flex: 1;
+  display: inline-block;
+  border: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+  max-width: 100px;
+}
+.btn-delete {
+  /* background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 9px;
+  border-radius: 50%;
+  cursor: pointer; */
+  color: #435757;
+  background: linear-gradient(-20deg, #ff4444 20%, #ff4 80%);
+  float: right;
+  display: block;
+  height: 53px;
+  order: 4;
+  outline: none;
+  counter-increment: undone-items;
+}
+.form-check-input[type='checkbox'] {
+  border-radius: 50%;
+}
+.btn-checked {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.form-check-input:checked {
+  background-color: linear-gradient(-20deg, #000dff 80%, rgb(0, 255, 17) 20%);
+  border-color: linear-gradient(-20deg, #000dff 80%, rgb(0, 255, 17) 20%);
+}
+.tasks {
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.2em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tasks::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -20px;
+  width: 5px;
+  background-color: #435757;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tasks::after {
+  display: block;
+  float: right;
+  font-weight: normal;
 }
