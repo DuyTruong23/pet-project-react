@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import TodoItem from './TodoItem';
 import AddTodo from './AddTodo';
@@ -11,7 +11,7 @@ const Todos = () => {
     const getTodos = async () => {
       try {
         const res = await axios.get(
-          'https://jsonplaceholder.typicode.com/todos?_limit=5'
+          'https://jsonplaceholder.typicode.com/todos?_limit=3'
         );
         // console.log(res.data)
         setTodosState(res.data);
@@ -59,26 +59,23 @@ const Todos = () => {
   };
 
   return (
-    <div>
-      <AddTodo addTodoFunc={addTodo} className='b-100' />
+    <Fragment>
+      <AddTodo addTodoFunc={addTodo} />
       <Container className='container'>
         <h1 className='title-list'>Danh sách tasks</h1>
         {todosState.map((todo) => {
           return (
-            <div className=''>
-              <Card.Body className='center'>
-                <TodoItem
-                  key={todo.id}
-                  todoProps={todo}
-                  markCompleteFunc={markComplete}
-                  deleteTodoFunc={deleteTodo}
-                />
-              </Card.Body>
-            </div>
+            <Card.Body key={todo.id} className='center'>
+              <TodoItem
+                todoProps={todo}
+                markCompleteFunc={markComplete}
+                deleteTodoFunc={deleteTodo}
+              />
+            </Card.Body>
           );
         })}
       </Container>
-    </div>
+    </Fragment>
   );
 };
 

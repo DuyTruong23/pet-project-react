@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const AddTodo = (props) => {
   const addTodo = props.addTodoFunc;
   const [title, setTitle] = useState('');
+  
   const addTodoFormStyle = {
     display: 'flex',
   };

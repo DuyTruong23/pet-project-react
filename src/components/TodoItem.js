@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Form, Button, InputGroup } from 'react-bootstrap';
 
 const TodoItem = (props) => {
@@ -18,7 +17,7 @@ const TodoItem = (props) => {
 
   // Return
   return (
-    <p style={todoItemStyle}>
+    <div style={todoItemStyle}>
       <InputGroup className='mb-1' size='lg'>
         <InputGroup.Checkbox
           className='btn-checked'
@@ -42,15 +41,8 @@ const TodoItem = (props) => {
           Xoá
         </Button>
       </InputGroup>
-    </p>
+    </div>
   );
-};
-
-// PropTypes
-TodoItem.propTypes = {
-  todoProps: PropTypes.object.isRequired,
-  markCompleteFunc: PropTypes.func.isRequired,
-  deleteTodoFunc: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
